@@ -31,6 +31,13 @@ def credentials():
         "password": os.getenv("PASSWORD")
     }
 
+@pytest.fixture()
+def wrong_password():
+    return {
+        "username": os.getenv("USERNAME"),
+        "wrong_password": os.getenv("WRONG_PASSWORD")
+    }
+
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
     outcome = yield
