@@ -25,10 +25,8 @@ jobs:
     - name: Install Google Chrome
       run: |
         sudo apt-get update
-                sudo apt-get install -y wget curl unzip libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1
-                wget -q https://google.com
-                sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
-                google-chrome --version
+        sudo apt-get update
+        sudo apt-get install -y wget gnupg ca-certificates
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
